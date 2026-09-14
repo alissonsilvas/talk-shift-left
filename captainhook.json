@@ -1,0 +1,13 @@
+{
+    "pre-commit": {
+        "enabled": true,
+        "actions": [
+            {
+                "action": "vendor/bin/php-cs-fixer check --diff --config=.php-cs-fixer.dist.php {$STAGED_FILES|of-type:php}",
+                "config": {
+                    "label": "PHP-CS-Fixer"
+                }
+            }
+        ]
+    }
+}

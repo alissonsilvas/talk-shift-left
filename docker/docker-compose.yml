@@ -1,0 +1,17 @@
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app
+    environment:
+      # The container is for running the fixer; CaptainHook installs the
+      # host Git hook when Composer is run from the project repository.
+      CAPTAINHOOK_DISABLE: "true"
+    volumes:
+      - .:/app
+    command: >-
+      sh -lc '
+        composer install --no-interaction --prefer-dist &&
+        vendor/bin/php-cs-fixer check --diff --config=.php-cs-fixer.dist.php;
+      '

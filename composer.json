@@ -1,0 +1,19 @@
+{
+    "name": "phpcomrapadura/talk-shift-left",
+    "description": "Exemplos da palestra Shift Left",
+    "type": "project",
+    "require": {
+        "php": "^8.5"
+    },
+    "require-dev": {
+        "captainhook/captainhook": "^5.0",
+        "captainhook/hook-installer": "^1.0",
+        "friendsofphp/php-cs-fixer": "^3.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "captainhook/hook-installer": true
+        },
+        "sort-packages": true
+    }
+}
