@@ -6,10 +6,10 @@ class InvoiceService
 {
     public function process(
         string $description,
-        int $amount,
-        \DateTime $dueDate,
+        int $amountInCents,
+        \DateTimeImmutable $dueDate,
         string $paymentMethod
-    ) {
-        return new Invoice($description, $amount, $dueDate, $paymentMethod);
+    ): Invoice {
+        return new Invoice($description, $amountInCents, $dueDate, $paymentMethod);
     }
 }

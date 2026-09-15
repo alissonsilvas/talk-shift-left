@@ -2,24 +2,26 @@
 
 namespace Invoice;
 
-class Invoice
+use InvalidArgumentException;
+
+final class Invoice
 {
     private string $description;
-    private int $amount;
-    private \DateTime $dueDate;
+    private int $amountInCents;
+    private \DateTimeImmutable $dueDate;
     private string $paymentMethod;
     private string $status = 'pending';
 
     public function __construct(
         string $description,
-        int $amount,
-        \DateTime $dueDate,
+        int $amountInCents,
+        \DateTimeImmutable $dueDate,
         string $paymentMethod
     ) {
-        $this->description = $description;
-        $this->amount = $amount;
-        $this->dueDate = $dueDate;
-        $this->paymentMethod = $paymentMethod;
+        $this->setDescription($description);
+        $this->setAmountInCents($amountInCents);
+        $this->setDueDate($dueDate);
+        $this->setPaymentMethod($paymentMethod);
     }
 
     public function getDescription(): string
@@ -27,12 +29,12 @@ class Invoice
         return $this->description;
     }
 
-    public function getAmount(): int
+    public function getAmountInCents(): int
     {
-        return $this->amount;
+        return $this->amountInCents;
     }
 
-    public function getDueDate(): \DateTime
+    public function getDueDate(): \DateTimeImmutable
     {
         return $this->dueDate;
     }
@@ -46,4 +48,41 @@ class Invoice
     {
         return $this->status;
     }
+
+    public function setDescription(string $description): void
+    {
+        $description = trim($description);
+
+        if ($description === '') {
+            throw new InvalidArgumentException('Invoice description cannot be empty.');
+        }
+
+        $this->description = $description;
+    }
+
+    public function setAmountInCents(int $amountInCents): void
+    {
+        if ($amountInCents <= 0) {
+            throw new InvalidArgumentException('Invoice amount must be greater than zero.');
+        }
+
+        $this->amountInCents = $amountInCents;
+    }
+
+    public function setDueDate(\DateTimeImmutable $dueDate): void
+    {
+        $this->dueDate = $dueDate;
+    }
+
+    public function setPaymentMethod(string $paymentMethod): void
+    {
+        $paymentMethod = trim($paymentMethod);
+
+        if ($paymentMethod === '') {
+            throw new InvalidArgumentException('Invoice payment method cannot be empty.');
+        }
+
+        $this->paymentMethod = $paymentMethod;
+    }
+
 }
