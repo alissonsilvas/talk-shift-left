@@ -1,0 +1,45 @@
+- description: Account - contrato de criação
+  vars:
+    focus: contrato público, dados normalizados e status inicial
+    spec: file://docs/spec-account.md
+  assert:
+    - type: contains
+      value: Account
+    - type: contains
+      value: AccountService
+    - type: contains
+      value: active
+    - type: contains
+      value: trim
+    - type: contains
+      value: InvalidArgumentException
+- description: Account - regras de validação
+  vars:
+    focus: entradas inválidas, exceção esperada e mensagens não prescritivas
+    spec: file://docs/spec-account.md
+  assert:
+    - type: contains
+      value: Account
+    - type: contains
+      value: AccountService
+    - type: contains
+      value: active
+    - type: contains
+      value: trim
+    - type: contains
+      value: InvalidArgumentException
+- description: Account - limites arquiteturais
+  vars:
+    focus: isolamento do módulo, ferramentas de qualidade e fora de escopo
+    spec: file://docs/spec-account.md
+  assert:
+    - type: contains
+      value: Account
+    - type: contains
+      value: AccountService
+    - type: contains
+      value: active
+    - type: contains
+      value: trim
+    - type: contains
+      value: InvalidArgumentException

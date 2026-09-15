@@ -1,0 +1,45 @@
+- description: Invoice - contrato de processamento
+  vars:
+    focus: contrato público, dados da fatura e status inicial
+    spec: file://docs/spec-invoice.md
+  assert:
+    - type: contains
+      value: Invoice
+    - type: contains
+      value: InvoiceService
+    - type: contains
+      value: process
+    - type: contains
+      value: pending
+    - type: contains
+      value: InvalidArgumentException
+- description: Invoice - regras de validação
+  vars:
+    focus: descrição, valor, meio de pagamento e validações dos setters
+    spec: file://docs/spec-invoice.md
+  assert:
+    - type: contains
+      value: Invoice
+    - type: contains
+      value: InvoiceService
+    - type: contains
+      value: process
+    - type: contains
+      value: pending
+    - type: contains
+      value: InvalidArgumentException
+- description: Invoice - limites arquiteturais
+  vars:
+    focus: isolamento do módulo, ferramentas de qualidade e fora de escopo
+    spec: file://docs/spec-invoice.md
+  assert:
+    - type: contains
+      value: Invoice
+    - type: contains
+      value: InvoiceService
+    - type: contains
+      value: process
+    - type: contains
+      value: pending
+    - type: contains
+      value: InvalidArgumentException

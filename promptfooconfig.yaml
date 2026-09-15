@@ -1,46 +1,9 @@
 # yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
-description: Avaliação da spec do módulo Account
+description: Avaliação das specs dos módulos Account e Invoice
 
-providers:
-  - id: openai:chat:deepseek/deepseek-v3.2
-    config:
-      apiBaseUrl: https://openrouter.ai/api/v1
-      apiKeyEnvar: OPENROUTER_API_KEY
-  - id: openai:chat:meta-llama/llama-4-maverick
-    config:
-      apiBaseUrl: https://openrouter.ai/api/v1
-      apiKeyEnvar: OPENROUTER_API_KEY
-  - id: openai:chat:anthropic/claude-haiku-4.5
-    config:
-      apiBaseUrl: https://openrouter.ai/api/v1
-      apiKeyEnvar: OPENROUTER_API_KEY
+providers: file://promptfoo/providers.yaml
 
 prompts:
-  - file://promptfoo/prompts/account-spec-review.txt
+  - file://promptfoo/prompts/spec-review.txt
 
-defaultTest:
-  assert:
-    - type: contains
-      value: Account
-    - type: contains
-      value: AccountService
-    - type: contains
-      value: active
-    - type: contains
-      value: trim
-    - type: contains
-      value: InvalidArgumentException
-
-tests:
-  - description: contrato de criação da conta
-    vars:
-      focus: contrato público, dados normalizados e status inicial
-      spec: file://docs/spec-account.md
-  - description: regras de validação
-    vars:
-      focus: entradas inválidas, exceção esperada e mensagens não prescritivas
-      spec: file://docs/spec-account.md
-  - description: limites arquiteturais
-    vars:
-      focus: isolamento do módulo, ferramentas de qualidade e fora de escopo
-      spec: file://docs/spec-account.md
+tests: file://promptfoo/tests/*.yaml
