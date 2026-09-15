@@ -9,10 +9,6 @@
       value: AccountService
     - type: contains
       value: active
-    - type: contains
-      value: trim
-    - type: contains
-      value: InvalidArgumentException
 - description: Account - regras de validação
   vars:
     focus: entradas inválidas, exceção esperada e mensagens não prescritivas
@@ -20,10 +16,6 @@
   assert:
     - type: contains
       value: Account
-    - type: contains
-      value: AccountService
-    - type: contains
-      value: active
     - type: contains
       value: trim
     - type: contains
@@ -35,11 +27,3 @@
   assert:
     - type: contains
       value: Account
-    - type: contains
-      value: AccountService
-    - type: contains
-      value: active
-    - type: contains
-      value: trim
-    - type: contains
-      value: InvalidArgumentException

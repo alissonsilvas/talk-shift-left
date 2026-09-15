@@ -38,7 +38,7 @@
                 }
             },
             {
-                "action": "set -a; . .env; set +a; OPENAI_API_KEY=\"$OPENROUTER_API_KEY\" npx --yes promptfoo@0.121.1 eval -c promptfooconfig.yaml --env-file .env --no-cache",
+                "action": "sh -c 'exec \"$(git rev-parse --show-toplevel)/bin/promptfoo-eval\"'",
                 "config": {
                     "label": "Promptfoo Account Spec"
                 }

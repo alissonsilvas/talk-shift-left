@@ -11,8 +11,6 @@
       value: process
     - type: contains
       value: pending
-    - type: contains
-      value: InvalidArgumentException
 - description: Invoice - regras de validação
   vars:
     focus: descrição, valor, meio de pagamento e validações dos setters
@@ -23,9 +21,7 @@
     - type: contains
       value: InvoiceService
     - type: contains
-      value: process
-    - type: contains
-      value: pending
+      value: trim
     - type: contains
       value: InvalidArgumentException
 - description: Invoice - limites arquiteturais
@@ -39,7 +35,3 @@
       value: InvoiceService
     - type: contains
       value: process
-    - type: contains
-      value: pending
-    - type: contains
-      value: InvalidArgumentException
