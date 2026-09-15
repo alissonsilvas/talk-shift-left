@@ -21,5 +21,22 @@
                 }
             }
         ]
+    },
+    "pre-push": {
+        "enabled": true,
+        "actions": [
+            {
+                "action": "composer audit --no-interaction",
+                "config": {
+                    "label": "Composer Audit"
+                }
+            },
+            {
+                "action": "vendor/bin/deptrac analyse --config-file=deptrac.yaml",
+                "config": {
+                    "label": "Deptrac"
+                }
+            }
+        ]
     }
 }

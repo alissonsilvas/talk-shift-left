@@ -8,6 +8,7 @@
     "require-dev": {
         "captainhook/captainhook": "^5.0",
         "captainhook/hook-installer": "^1.0",
+        "deptrac/deptrac": "^4.0",
         "friendsofphp/php-cs-fixer": "^3.0",
         "phpstan/phpstan": "^2.0",
         "phpunit/phpunit": "^13.0"

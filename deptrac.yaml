@@ -1,0 +1,13 @@
+deptrac:
+    paths:
+        - ./src
+    layers:
+        -
+            name: Invoice
+            collectors:
+                -
+                    type: directory
+                    value: src/Invoice/.*
+    ruleset:
+        Invoice:
+            - Invoice
