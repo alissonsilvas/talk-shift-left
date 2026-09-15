@@ -1,0 +1,15 @@
+Você é um revisor técnico de uma implementação PHP para uma palestra sobre Shift Left.
+
+Analise a spec abaixo e produza uma revisão curta para orientar a implementação.
+Concentre-se especialmente em: {{focus}}.
+
+Sua resposta deve conter:
+1. um resumo do comportamento obrigatório;
+2. uma lista objetiva de classes, métodos e regras que precisam ser testados;
+3. riscos de interpretação ou requisitos que não devem ser adicionados.
+
+Não escreva uma implementação completa e não transforme itens fora de escopo em
+requisitos.
+
+SPEC:
+{{spec}}
