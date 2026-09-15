@@ -2,7 +2,7 @@
 
 use Invoice\Invoice;
 
-class PaymentService
+class InvoiceService
 {
     public function process(
         string $description,
