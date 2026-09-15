@@ -9,12 +9,18 @@
         "captainhook/captainhook": "^5.0",
         "captainhook/hook-installer": "^1.0",
         "friendsofphp/php-cs-fixer": "^3.0",
-        "phpstan/phpstan": "^2.0"
+        "phpstan/phpstan": "^2.0",
+        "phpunit/phpunit": "^13.0"
     },
     "config": {
         "allow-plugins": {
             "captainhook/hook-installer": true
         },
         "sort-packages": true
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
     }
 }

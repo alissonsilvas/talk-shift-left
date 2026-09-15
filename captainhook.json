@@ -13,6 +13,12 @@
                 "config": {
                     "label": "PHPStan"
                 }
+            },
+            {
+                "action": "vendor/bin/phpunit --configuration=phpunit.xml",
+                "config": {
+                    "label": "PHPUnit"
+                }
             }
         ]
     }

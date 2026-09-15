@@ -14,5 +14,6 @@ services:
       sh -lc '
         composer install --no-interaction --prefer-dist &&
         vendor/bin/php-cs-fixer check --diff --config=.php-cs-fixer.dist.php &&
-        vendor/bin/phpstan analyse --configuration=phpstan.neon --no-progress --debug;
+        vendor/bin/phpstan analyse --configuration=phpstan.neon --no-progress --debug &&
+        vendor/bin/phpunit --configuration=phpunit.xml;
       '

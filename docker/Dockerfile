@@ -4,7 +4,8 @@ ENV COMPOSER_ALLOW_SUPERUSER=1 \
     COMPOSER_HOME=/tmp/composer
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends git unzip \
+    && apt-get install -y --no-install-recommends git unzip libonig-dev libxml2-dev \
+    && docker-php-ext-install dom mbstring \
     && rm -rf /var/lib/apt/lists/*
 
 # Composer is useful for installing PHPUnit (or any other dependency used by
