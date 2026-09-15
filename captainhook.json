@@ -7,6 +7,12 @@
                 "config": {
                     "label": "PHP-CS-Fixer"
                 }
+            },
+            {
+                "action": "vendor/bin/phpstan analyse --configuration=phpstan.neon --no-progress --debug {$STAGED_FILES|of-type:php}",
+                "config": {
+                    "label": "PHPStan"
+                }
             }
         ]
     }
